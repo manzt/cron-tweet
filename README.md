@@ -61,7 +61,7 @@ Make sure the "Access Token and Secret" section now says "Created with Read and
 Write permissions".
 
 <p align="center">
-<img width="400" alt="Keys and tokens panel within the Developer Portal with valid Access Token and Secret" src=https://user-images.githubusercontent.com/24403730/189490761-b8c99353-4cb6-4e6e-b2bf-429825c21c4b.png">
+<img width="400" alt="Keys and tokens panel within the Developer Portal with valid Access Token and Secret" src="https://user-images.githubusercontent.com/24403730/189490761-b8c99353-4cb6-4e6e-b2bf-429825c21c4b.png">
 </p>
 
 You should now have the following saved for your records:
