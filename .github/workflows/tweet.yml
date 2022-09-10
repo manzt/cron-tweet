@@ -1,0 +1,34 @@
+name: Tweet on a CRON Schedule
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 9 * * *' # everyday at 9AM UTC, see https://crontab.guru
+
+jobs:
+  Tweet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+          bundler-cache: true
+      - name: Install twurl
+        run: gem install twurl
+      - name: Tweet
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+        run: |
+          twurl request \
+            --consumer-key $TWITTER_API_KEY \
+            --consumer-secret $TWITTER_API_SECRET \
+            --access-token $TWITTER_ACCESS_TOKEN \
+            --token-secret $TWITTER_ACCESS_TOKEN_SECRET \
+            --data 'status=Testing twurl' \
+            /1.1/statuses/update.json
