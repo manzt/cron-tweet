@@ -23,7 +23,7 @@ matter what it's called.
 You will be prompted with your API Key, API Key Secret, and Bearer Token for
 your app. To post tweets you will only need the **API Key** and **API Access
 Token** Keep these for your records. API keys/secrets are private and should not
-be posted or shared publically.
+be posted or shared publicly.
 
 ### Enable read and write app permissions
 
@@ -80,7 +80,7 @@ TWITTER_ACCESS_TOKEN=<Acesss Token>
 TWITTER_ACCESS_TOKEN_SECRET=<Access Token Secret>
 ```
 
-This file is ignored by `.gitingore` so you won't accidently check-in your
+This file is ignored by `.gitingore` so you won't accidentally check-in your
 private keys to your public repository.
 
 ## Getting started
@@ -93,8 +93,8 @@ application.
 
 ### Your first tweet
 
-Make sure you have `twurl` installed on your machine (`gem install twurl`), and
-you're all set to make requests.
+Make sure you have `twurl` (and Ruby) installed on your machine
+(`gem install twurl`), and you're all set to make requests.
 
 The following command will post a status update of "Testing 1, 2, 3, ..." to
 your account.
@@ -134,18 +134,18 @@ The workflow included in this repo does the following every day (at 9AM UTC),
 - Installs `twurl`
 - Tweets with `twurl`
 
-### ⚠️ IMPORTANT ⚠️A Adding your secrets to the GitHub Repo
+### ⚠️ IMPORTANT ⚠️ Adding your secrets to the GitHub Repo
 
 Without your credentials, the 🤖 will fail to tweet on your behalf 😢.
 Fortunately, there is a safe way to expose your secret credentials to GitHub
-Actions (without exposing your keys publically).
+Actions (without exposing your keys publicly).
 
-Witin the "Settings" tab for this repo, select Security > Secrets > Actions and
+Within the "Settings" tab for this repo, select Security > Secrets > Actions and
 click "New repository secret" to add each of your keys/secrets to the repo.
 
 Use the naming convention from the `.env` file (e.g., `TWITTER_API_KEY`) for
 each of your secrets. These names are referenced withing the workflow file, so
-using different names or mispelling will cause the tweeting to fail.
+using different names or misspelling will cause the tweeting to fail.
 
 ![Adding secrets to repo setting](https://user-images.githubusercontent.com/24403730/189492790-fd1f28f5-39dd-4819-a098-92455418ddc1.png)
 
