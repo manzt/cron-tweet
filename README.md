@@ -7,7 +7,7 @@ conversation with [@GetzlerChem](https://twitter.com/GetzlerChem).
 
 - A Twitter
   [developer account](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api)
-  with **Elevated access**. I hope to migrate the tutorial to v2 so that this repo works for basic Essential access.
+  with basic **Essential access**.
 
 ## Setup
 
@@ -74,10 +74,10 @@ You should now have the following saved for your records:
 You can create a `.env` text file for your records with the following contents,
 
 ```
-TWITTER_API_KEY=<API Key>
-TWITTER_API_SECRET=<API Key Secret>
-TWITTER_ACCESS_TOKEN=<Acesss Token>
-TWITTER_ACCESS_TOKEN_SECRET=<Access Token Secret>
+export TWITTER_API_KEY=<API Key>
+export TWITTER_API_SECRET=<API Key Secret>
+export TWITTER_ACCESS_TOKEN=<Acesss Token>
+export TWITTER_ACCESS_TOKEN_SECRET=<Access Token Secret>
 ```
 
 This file is ignored by `.gitingore` so you won't accidentally check-in your
@@ -101,13 +101,13 @@ your account.
 
 ```bash
 source .env # add your keys/secrets to your shell environment
-twurl request \
+twurl /2/tweets \
+	--data '{"text": "Testing 1, 2, 3, ..."}' \
+	--header 'Content-Type: application/json' \
 	--consumer-key $TWITTER_API_KEY \
 	--consumer-secret $TWITTER_API_SECRET \
-	--access-token $ACCESS_TOKEN \
-	--token-secret $ACCESS_TOKEN_SECRET \
-	--data 'status=Testing 1, 2, 3, ...' \
-	/1.1/statuses/update.json
+	--access-token $TWITTER_ACCESS_TOKEN \
+	--token-secret $TWITTER_ACCESS_TOKEN_SECRET
 ```
 
 ### Automating tweets (this repo)
