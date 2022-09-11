@@ -7,7 +7,7 @@ conversation with [@GetzlerChem](https://twitter.com/GetzlerChem).
 
 - A Twitter
   [developer account](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api)
-  with basic Essential access.
+  with **Elevated access**. I hope to migrate the tutorial to v2 so that this repo works for basic Essential access.
 
 ## Setup
 
