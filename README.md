@@ -11,7 +11,7 @@ conversation with [@GetzlerChem](https://twitter.com/GetzlerChem).
 
 ## Setup
 
-### Create a Standalone App in the Developer portal
+### Create a Standalone App in the Developer Portal
 
 Navigate to the Twitter Developer Portal and create a Standalone App. It doesn't
 matter what it's called.
